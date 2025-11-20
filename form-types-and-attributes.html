@@ -6,7 +6,90 @@
     <title>forms</title>
 </head>
 <body>
-    <input type="text">
+    <h2>Waarom heeft elke input een label nodig?</h2>
+    <p>voor de screenreaders, screenreader leest de placeholder niet voor maar een label wel</p>
+    <h3>Demo:</h3>
+
+    <h3>Input met label (toegankelijk)</h3>
+     <label for="name">Naam:</label>
+      <input id="name" type="text" placeholder="Typ je naam">
+
+    <h3>Input zonder label (NIET toegankelijk)</h3>
+     <input type="text" placeholder="Naam">
+
+
+    <h2>Wat doe je met de attributen type,autocomplete,inputmode en enterkeyhint?</h2>
+    <p>type: bepaalt het soort invoer (email, number, password, etc.)</p>
+    <p>autocomplete: laat de browser suggesties invullen (zoals email, naam, adres)</p>
+    <p>inputmode bepaalt welk toetsenbord op mobiel verschijnt</p>
+    <p>enterkeyhint verandert de enter-knop op mobiel (“search”, “send”, “next”)</p>
     
+    <h3>Demo:</h3>
+    <label>Email veld (type + autocomplete):</label>
+     <input type="email" autocomplete="email" placeholder="mail@example.com">
+
+    <label>Mobiel nummer-toetsenbord (inputmode):</label>
+     <input inputmode="numeric" placeholder="Alleen cijfers op mobiel">
+
+    <label>Enterknop als zoekknop (enterkeyhint):</label>
+     <input type="search" enterkeyhint="search" placeholder="Zoeken…">
+
+
+    <h2>Wat doen fieldsets en legends in een formulier?</h2>
+     <p>Een fieldset groepeert velden die bij elkaar horen.</p>
+     <p>Een legend geeft een duidelijke titel aan die groep, ook voor screenreaders.</p>
+
+    <h3>Demo:</h3>
+    <fieldset>
+     <legend>Persoonsgegevens</legend>
+
+     <label for="f">Voornaam:</label>
+     <input id="f" type="text">
+
+     <label for="l">Achternaam:</label>
+     <input id="l" type="text">
+    </fieldset>
+
+
+    <h2>Wat doen required, maxlength, min, max en step?</h2>
+     <p>required → gebruiker moet het verplicht invullen</p>
+     <p>maxlength → maximaal aantal tekens</p>
+     <p>min / max → minimale en maximale waarde (bij numbers)</p>
+     <p>step → stapgrootte (bij numbers, bijvoorbeeld per 5 omhoog)</p>
+
+    <h3>Demo:</h3>
+     <input required placeholder="Dit moet je invullen">
+     <input maxlength="5" placeholder="Max 5 tekens">
+     <input type="number" min="18" max="65" value="18">
+     <input type="number" step="5" value="10">
+
+
+    <h2>Welke input pseudo-classes ken je nog niet? Maak met allemaal een demo'tje</h2>
+     <p>:focus → wanneer je in het inputveld klikt</p>
+     <p>:required → verplicht veld</p>
+     <p>:valid → geldige input</p>
+     <p>:invalid → ongeldige input</p>
+     <p>:disabled → geblokkeerd veld</p>
+
+    <h3>Demo:</h3>
+   <style>
+     input:focus { outline: 2px solid blue; }
+     input:required { border: 2px solid orange; }
+     input:valid { border: 2px solid green; }
+     input:invalid { border: 2px solid red; }
+     input:disabled { background: #ddd; }
+   </style>
+
+    <label>Email validatie:</label>
+    <input type="email" required placeholder="Typ een emailadres">
+
+    <label>Disabled voorbeeld:</label>
+    <input type="text" disabled placeholder="Kan niet typen">
+
+
+
+
+
+
 </body>
 </html>
